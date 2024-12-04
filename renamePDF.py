@@ -19,6 +19,8 @@ def stop_app(rect, dirs):
         doc.close()
         # Rename the file, taking path into account
         if len(title) > 0:
+            while os.path.exists(os.path.dirname(pdf) + '\\' + title + '.pdf'):
+                title+=" +"
             os.rename(pdf, os.path.dirname(pdf) + '\\' + title + '.pdf')
     input("Press enter to close")
 
